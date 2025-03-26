@@ -69,9 +69,9 @@ class Karyawan2 extends BaseController
     {
         $query = $this->karyawanModel->delete($id);
         if ($query) {
-            return redirect()->back()->with('success', 'Berhasil menghapus data karyawan');
+            return redirect()->back();
         }
-        return redirect()->back()->with('error', 'Gagal menghapus data karyawan');
+        return redirect()->back();
     }
     public function karyawan()
     {
