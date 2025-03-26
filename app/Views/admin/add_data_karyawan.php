@@ -39,7 +39,9 @@
                         <label for="status">Status</label>
                         <select class="form-control" id="status" name="status" required>
                             <option value="Aktif">Aktif</option>
-                            <option value="Nonaktif">Nonaktif</option>
+                            <option value="PHK">PHK</option>
+                            <option value="Cuti">Cuti</option>
+                            <option value="Off">Off</option>
                         </select>
                     </div>
 
@@ -80,55 +82,55 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-    $(document).ready(function() {
-        function hitungUsia() {
-            let tanggalLahir = $("#tanggal_lahir").val();
-            if (tanggalLahir) {
-                let today = new Date();
-                let birthDate = new Date(tanggalLahir);
-                let usia = today.getFullYear() - birthDate.getFullYear();
-                let monthDiff = today.getMonth() - birthDate.getMonth();
-                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-                    usia--;
+        $(document).ready(function() {
+            function hitungUsia() {
+                let tanggalLahir = $("#tanggal_lahir").val();
+                if (tanggalLahir) {
+                    let today = new Date();
+                    let birthDate = new Date(tanggalLahir);
+                    let usia = today.getFullYear() - birthDate.getFullYear();
+                    let monthDiff = today.getMonth() - birthDate.getMonth();
+                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                        usia--;
+                    }
+                    $("#usia").val(usia);
                 }
-                $("#usia").val(usia);
-            }
-        }
-
-        $("#tanggal_lahir").on("change", hitungUsia);
-
-        $("#karyawanForm").submit(function(event) {
-            event.preventDefault();
-
-            let valid = true;
-            let nik = $("#nik").val();
-            let noHp = $("#no_hp").val();
-            let alertBox = $("#alertBox");
-
-            $("#nikError").addClass("d-none");
-            $("#noHpError").addClass("d-none");
-            alertBox.addClass("d-none").removeClass("alert-danger alert-success");
-
-            if (!/^\d{16}$/.test(nik)) {
-                $("#nikError").removeClass("d-none");
-                valid = false;
             }
 
-            if (!/^\d{10,}$/.test(noHp)) {
-                $("#noHpError").removeClass("d-none");
-                valid = false;
-            }
+            $("#tanggal_lahir").on("change", hitungUsia);
 
-            if (valid) {
-                alertBox.removeClass("d-none alert-danger").addClass("alert-success").text(
-                    "Data valid! Form akan dikirim.");
-                setTimeout(() => $("#karyawanForm")[0].submit(), 1000);
-            } else {
-                alertBox.removeClass("d-none alert-success").addClass("alert-danger").text(
-                    "Harap periksa kembali data yang diisi.");
-            }
+            $("#karyawanForm").submit(function(event) {
+                event.preventDefault();
+
+                let valid = true;
+                let nik = $("#nik").val();
+                let noHp = $("#no_hp").val();
+                let alertBox = $("#alertBox");
+
+                $("#nikError").addClass("d-none");
+                $("#noHpError").addClass("d-none");
+                alertBox.addClass("d-none").removeClass("alert-danger alert-success");
+
+                if (!/^\d{16}$/.test(nik)) {
+                    $("#nikError").removeClass("d-none");
+                    valid = false;
+                }
+
+                if (!/^\d{10,}$/.test(noHp)) {
+                    $("#noHpError").removeClass("d-none");
+                    valid = false;
+                }
+
+                if (valid) {
+                    alertBox.removeClass("d-none alert-danger").addClass("alert-success").text(
+                        "Data valid! Form akan dikirim.");
+                    setTimeout(() => $("#karyawanForm")[0].submit(), 1000);
+                } else {
+                    alertBox.removeClass("d-none alert-success").addClass("alert-danger").text(
+                        "Harap periksa kembali data yang diisi.");
+                }
+            });
         });
-    });
     </script>
 
 </body>
