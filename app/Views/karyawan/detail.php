@@ -13,7 +13,7 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header bg-primary text-white">
-                <h4 class="mb-0">Edit Data Karyawan</h4>
+                <h4 class="mb-0">Detail Data Karyawan</h4>
             </div>
             <div class="card-body"></div>
             <div id="alertBox" class="alert d-none"></div>
