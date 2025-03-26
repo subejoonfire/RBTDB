@@ -69,9 +69,9 @@ class Karyawan2 extends BaseController
     {
         $query = $this->karyawanModel->delete($id);
         if ($query) {
-            return redirect()->back();
+            return redirect()->to(base_url('karyawan'));
         }
-        return redirect()->back();
+        return redirect()->to(base_url('karyawan'));
     }
     public function karyawan()
     {
