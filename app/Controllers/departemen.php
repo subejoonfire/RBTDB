@@ -16,7 +16,6 @@ class Departemen extends BaseController
     public function index()
     {
         $data['departemen'] = $this->departemenModel->findAll();
-
         echo view('temp/header');
         echo view('temp/navbar');
         echo view('admin/tabel_departemen', $data);
@@ -33,8 +32,9 @@ class Departemen extends BaseController
             'id_departemen' => $this->request->getPost('id_departemen'),
             'nama_departemen' => $this->request->getPost('nama_departemen'),
         ];
+        $data = $this->departemenModel->insert($data);
 
-        if ($this->departemenModel->insert($data)) {
+        if ($data) {
             return redirect()->to('/departemen')->with('success', 'Data departemen berhasil ditambahkan');
         } else {
             return redirect()->back()->with('error', 'Gagal menambahkan data departemen');
@@ -44,11 +44,14 @@ class Departemen extends BaseController
     public function edit($id)
     {
         $data = [
-            'id_departemen' => $this->request->getPost('id_departemen'),
-            'nama_departemen' => $this->request->getPost('nama_departemen'),
+            'departemen' => $this->departemenModel->find($id)
         ];
-
-        $updated = $this->departemenModel->where('id_departemen', $id)->set($data)->update();
+        view('departemen/edit');
+    }
+    public function editAction()
+    {
+        $id = $this->request->getPost('id_departemen');
+        $updated = $this->departemenModel->where('id_departemen', $id)->set('nama_departemen', $this->request->getPost('nama_departemen'))->update();
 
         if ($updated) {
             return redirect()->to('/departemen')->with('success', 'Data departemen berhasil diedit');

@@ -21,13 +21,14 @@ $routes->get('karyawan/get/(:num)', 'Karyawan::getKaryawanById/$1'); // Mengambi
 $routes->post('karyawan/updateSelected', 'Karyawan::updateSelectedKaryawan'); // Memperbarui data karyawan yang terpilih
 
 
+$routes->post('/departemen', 'departemen::editAction');
 $routes->get('/departemen', 'departemen::index');
 $routes->post('/proses_add_departemen', 'departemen::proses_add_departemen');
 $routes->get('departemen/delete/(:num)', 'departemen::delete/$1');
 $routes->get('departemen/edit', 'departemen::edit');
 $routes->get('departemen/edit/(:num)', 'departemen::edit/$1');
 $routes->get('departemen/detail/(:num)', 'departemen::detail/$1');
-$routes->post('departemen/edit/(:num)', 'departemen::edit/$1');
+$routes->post('departemen/edit', 'departemen::editAction');
 $routes->get('/departemenlook', 'departemen::karyawan');
 $routes->get('/departemenadd', 'departemen::add_data_departemen');
 
