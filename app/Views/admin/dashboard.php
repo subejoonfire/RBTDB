@@ -83,8 +83,8 @@
                                         </div>
                                         <div class="col col-stats ms-3 ms-sm-0">
                                             <div class="numbers">
-                                                <p class="card-category">Subscribers</p>
-                                                <h4 class="card-title">1303</h4>
+                                                <p class="card-category">Departemen</p>
+                                                <h4 class="card-title">...</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -102,8 +102,8 @@
                                         </div>
                                         <div class="col col-stats ms-3 ms-sm-0">
                                             <div class="numbers">
-                                                <p class="card-category">Sales</p>
-                                                <h4 class="card-title">$ 1,345</h4>
+                                                <p class="card-category">PHK</p>
+                                                <h4 class="card-title">...</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -121,8 +121,8 @@
                                         </div>
                                         <div class="col col-stats ms-3 ms-sm-0">
                                             <div class="numbers">
-                                                <p class="card-category">Order</p>
-                                                <h4 class="card-title">576</h4>
+                                                <p class="card-category">lainnya</p>
+                                                <h4 class="card-title">...</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -184,24 +184,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-list py-4">
-                                            <div class="item-list">
-                                                <div class="avatar">
-                                                    <img src="assets/img/jm_denis.jpg" alt="..."
-                                                        class="avatar-img rounded-circle"
-                                                        style="width: 100%; height: 100%; object-fit: cover;" />
-                                                </div>
-                                                <div class="info-user ms-3">
-                                                    <div class="username">Jimmy Denis</div>
-                                                    <div class="status">Graphic Designer</div>
-                                                </div>
-                                                <button class="btn btn-icon btn-link op-8 me-1">
-                                                    <i class="far fa-envelope"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-link btn-danger op-8">
-                                                    <i class="fas fa-ban"></i>
-                                                </button>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

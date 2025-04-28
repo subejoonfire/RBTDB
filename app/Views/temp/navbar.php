@@ -62,8 +62,13 @@
                 </a>
               </li>
               <li>
-                <a href="tables/datatables.html">
-                  <span class="sub-item">Datatables</span>
+                <a href="/departemen">
+                  <span class="sub-item">Data Departemen</span>
+                </a>
+              </li>
+              <li>
+                <a href="/jabatan">
+                  <span class="sub-item">Data Jabatan</span>
                 </a>
               </li>
             </ul>
