@@ -15,6 +15,10 @@ $routes->post('karyawan/edit/(:num)', 'Karyawan2::edit/$1');
 $routes->get('/karyawanlook', 'Karyawan2::karyawan');
 $routes->get('/karyawanadd', 'Karyawan2::add_data_karyawan');
 $routes->post('/proses_add_karyawan', 'Karyawan2::proses_add_karyawan');
+$routes->post('/karyawan/edit-multiple', 'Karyawan2::editMultiple');
+$routes->post('/karyawan/update-multiple', 'Karyawan2::updateMultiple');
+$routes->get('karyawan/get/(:num)', 'Karyawan::getKaryawanById/$1'); // Mengambil data karyawan berdasarkan ID
+$routes->post('karyawan/updateSelected', 'Karyawan::updateSelectedKaryawan'); // Memperbarui data karyawan yang terpilih
 
 
 $routes->get('/departemen', 'departemen::index');
